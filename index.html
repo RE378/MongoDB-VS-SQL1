@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MongoDB vs SQL Server</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/solid.js" integrity="sha384-/BxOvRagtVDn9dJ+JGCtcofNXgQO/CCCVKdMfL115s3gOgQxWaX/tSq5V8dRgsbc" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js" integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous"></script>
+   <link rel="shortcut icon" href="fan.png" type="image/png">
+</head>
+<body>
+
+    <div class="sticky-lg-top">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand " id="heading" href="#">
+                    <img src="https://avatars.githubusercontent.com/u/23663616?s=200&v=4" class="size" alt="" srcset="">
+                    HEVO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 "  >
+                        <li class="nav-item sp " >
+                            <a class="nav-link" target="_blank" style="color:gray ;" href="https://hevodata.com/pipeline/" >Platform</a>
+                        </li>
+                        <li class="nav-item sp">
+                            <a class="nav-link" target="_blank" style="color:gray ;" href="https://hevodata.com/integrations/pipeline/?utm_campaign=blog_click&utm_medium=appbar_integrations&utm_source=Learn_mongodb-vs-sql-server" style="color:gray ;">Integration</a>
+                        </li>
+                        <li class="nav-item sp">
+                            <a class="nav-link" target="_blank" href="https://hevodata.com/pricing/pipeline/?utm_campaign=blog_click&utm_medium=appbar_pricing&utm_source=Learn_mongodb-vs-sql-server" style="color:gray ;">Pricing</a>
+                        </li>
+                        <li class="nav-item " id="left">
+                            <a class="nav-link" href="#" >
+                                <form class="d-flex" role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search Inside Hevo" aria-label="Search">
+                                    
+                                  </form>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="https://hevodata.com/signup/?step=email&utm_campaign=Signup&utm_medium=appbar_get_started_button&utm_source=Learn_mongodb-vs-sql-server">
+                                <button type="button" class="btn " style="color:white ; background-color: rgb(255, 140, 0);"><strong> GET STARTED FOR FREE </strong></button>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+          
+    </div>
+
+
+
+<div class="bar top-space  "id="sidebar1" >
+    <div class="card ">
+          
+        <div class="card" style="width: 15rem;">
+          <img src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1646047082/hevo-learn/MongoDB-vs-SQL-Server-SI/MongoDB-vs-SQL-Server-SI.png?_i=AA" class="card-img-top" alt="...">
+          <div class="card-body" >
+              <div class="card-body">
+                  <p class="card-text">
+                    <h5 class="bl">No-code Data Pipeline for MongoDB and SQL Server</h5>
+                   <small> <p>Load data from 100+ sources such as MongoDB and SQL Server to your desired destination in real-time using Hevo</p>
+                   </small><br>
+                    <p><a href="https://community.hevodata.com/write-for-hevo" 
+                        target="_blank" class="h-1"> WRITE FOR HEVO</a></p>
+                </p>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+ 
+<section class="s1">
+    <h1 class="col">MongoDB vs SQL Server: Which is Better? [10 Critical Differences]</h1>
+    <p class="gre">
+       <a href="https://hevodata.com/learn/author/nidhi-b/" target="_blank" class="highlight"> Nidhi B</a>. on <a href="https://hevodata.com/learn/category/data-integration/database-management-systems/"
+       target="_blank" class="highlight"> Database Management Systems </a>, <a href="https://hevodata.com/learn/category/microsoft-sql-server/" 
+       target="_blank" class="highlight"> Microsoft SQL Server</a>,
+       <a href="https://hevodata.com/learn/category/data-integration/database-management-systems/mongodb/" 
+       target="_blank" class="highlight"> MongoDB </a> • February 10th, 2022 • <a href="https://community.hevodata.com/write-for-hevo" 
+       target="_blank" class="h-1"> WRITE FOR HEVO</a>
+       <img src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1646047000/hevo-learn/MongoDB-vs-SQL-Server-FI/MongoDB-vs-SQL-Server-FI.png?_i=AA" alt="" class="img1">
+    </p>
+    <div >
+        <p class="bl"style="margin-top: 0.5rem;
+        width: 95%;">
+            While building a software application, the question arises where will you store your data and
+             how? The traditional approach is a simple text file or CSV file which is not a good choice
+              in today’s big data world. The solution is Database Management System(DBMS) which allows
+               different user application programs to concurrently access the same Database.
+        </p>
+        <p class="bl" style="margin-top: 0.5rem;
+        width: 95%;">
+            A Database Management system(DBMS) is a simpler, easier, reliable, faster, secure, and 
+            powerful software tool for Storing, Managing, and Retrieving data. There are two types of 
+            Databases: Relational and Non-Relational Databases. An example of a Relational Database is
+             SQL Server and a Non-Relational Database is MongoDB. We will be discussing the key differences
+              between MongoDB vs SQL Server in this blog.
+
+
+        </p>
+    </div>
+</section>
+<section class="s2">
+<h2 class="bl">Table of Contents</h2>
+<ul >
+    <li >
+        <a href="#Md1">What is MongoDB?</a>
+    </li>
+    <ul>
+        <li >
+            <a href="#Md2"> Features of MongoDB</a>
+        </li>
+        <li class="sq"><a href="#Md3"> High Performance</a></li>
+        <li class="sq"><a href="#Md4"> Scalability</a></li>
+        <li class="sq"><a href="#Md5"> Availability</a></li>
+        <li class="sq"><a href="#Md6"> Flexibility</a></li>
+    </ul>
+</ul>
+<ul>
+    <li><a href="#SQL1"> What is SQL Server?</a></li>
+    <ul>
+        <li><a href="#SQL2"> Features of SQL Server</a></li>
+        <li class="sq"><a href="#SQL3"> Cloud Database Support</a></li>
+        <li class="sq"><a href="#SQL4"> Ease of Management</a></li>
+        <li class="sq"><a href="#SQL5"> High Security</a></li>
+        <li class="sq"><a href="#SQL6"> End-to-End Business Data Solutions</a></li>
+    </ul>
+</ul>
+<ul>
+    <li><a href="#MvS1">MongoDB vs SQL Server: Key Differences</a></li>
+    <ul>
+        <li><a href="#D1">MongoDB vs SQL Server: Developed by and Initial Release</a></li>
+        <li><a href="#D2">MongoDB vs SQL Server: Database Model</a></li>
+        <li><a href="#D3">MongoDB vs SQL Server: Implementation Language</a></li>
+        <li><a href="#D4">MongoDB vs SQL Server: License</a></li>
+        <li><a href="#D5">MongoDB vs SQL Server: Data Schema</a></li>
+        <li><a href="#D6">MongoDB vs SQL Server: Query Language</a></li>
+        <li><a href="#D7">MongoDB vs SQL Server: Scalability</a></li>
+        <li><a href="#D8">MongoDB vs SQL Server: Map Reduce</a></li>
+        <li><a href="#D9">MongoDB vs SQL Server: Joins</a></li>
+        <li><a href="#D.10">MongoDB vs SQL Server: Transaction</a></li>
+        <li><a href="#D.11">MongoDB vs SQL Server: XML Support</a></li>
+        <li><a href="#D.12"> Conclusion</a></li>
+       
+    </ul>
+</ul>
+
+</section>
+<section class="s3">
+    
+    <div>
+    <h2 id="Md1" class="bl top-space">What is MongoDB?</h2>
+    <div id="par">
+        <p >
+           <a href="https://www.mongodb.com/" class="h-2" target="_blank"> MongoDB</a> is an open-source, cross-platform, document-oriented, and non-relational database system. 
+            MongoDB is developed by MongoDB Inc. and was first released on February 11, 2009. 
+             Its stable release is <a href="https://www.mongodb.com/docs/manual/release-notes/5.0/" class="h-2" target="_blank"> MongoDB 5.0.5 </a> released on 6 December 2021. 
+            It is written in different programming languages like <a href="https://www.google.com/search?sxsrf=APq-WBsEsNVCcZdBITZ1U5IbbLdHeh2BBg:1644081892758&q=JavaScript&stick=H4sIAAAAAAAAAOPgE-LSz9U3MK2KLzLKU-IAsY0KLM21dDLKrfST83NyUpNLMvPz9Ivz00rKE4tSrQqK8tOLEnNzM_PSFXIS89JLE9NTF7FyeSWWJQYnF2UWlOxgZQQA1itDBlYAAAA&sa=X&ved=2ahUKEwj18Mupiun1AhVTT2wGHW48CqwQmxMoAXoECCoQAw" 
+            class="h-2" target="_blank">JavaScript </a>,
+            <a href="https://www.google.com/search?sxsrf=APq-WBsEsNVCcZdBITZ1U5IbbLdHeh2BBg:1644081892758&q=Python&stick=H4sIAAAAAAAAAOPgE-LSz9U3MK2KLzLKU-KAsA3jtXQyyq30k_NzclKTSzLz8_SL89NKyhOLUq0KivLTixJzczPz0hVyEvPSSxPTUxexsgVUlmTk5-1gZQQAtiAsClIAAAA&sa=X&ved=2ahUKEwj18Mupiun1AhVTT2wGHW48CqwQmxMoAnoECCoQBA" 
+            class="h-2" target="_blank"> Python</a>,<a href="https://www.google.com/search?sxsrf=APq-WBsEsNVCcZdBITZ1U5IbbLdHeh2BBg:1644081892758&q=Java&stick=H4sIAAAAAAAAAOPgE-LSz9U3MK2KLzLKUwKzzYuTstOStHQyyq30k_NzclKTSzLz8_SL89NKyhOLUq0KivLTixJzczPz0hVyEvPSSxPTUxexsnglliXuYGUEAAhvXZ9SAAAA&sa=X&ved=2ahUKEwj18Mupiun1AhVTT2wGHW48CqwQmxMoA3oECCoQBQ" 
+            class="h-2" target="_blank"> Java</a>,<a href="https://www.google.com/search?sxsrf=APq-WBsEsNVCcZdBITZ1U5IbbLdHeh2BBg:1644081892758&q=PHP&stick=H4sIAAAAAAAAAOPgE-LSz9U3MK2KLzLKU-IAsc0Mssu0dDLKrfST83NyUpNLMvPz9Ivz00rKE4tSrQqK8tOLEnNzM_PSFXIS89JLE9NTF7EyB3gE7GBlBADIsqfKTwAAAA&sa=X&ved=2ahUKEwj18Mupiun1AhVTT2wGHW48CqwQmxMoBHoECCoQBg" 
+            class="h-2" target="_blank"> PHP</a>, <a href="https://www.google.com/search?sxsrf=APq-WBsEsNVCcZdBITZ1U5IbbLdHeh2BBg:1644081892758&q=C%2B%2B&stick=H4sIAAAAAAAAAOPgE-LSz9U3MK2KLzLKU-IAsbPSC9O1dDLKrfST83NyUpNLMvPz9Ivz00rKE4tSrQqK8tOLEnNzM_PSFXIS89JLE9NTF7EyO2tr72BlBADr1BjgTwAAAA&sa=X&ved=2ahUKEwj18Mupiun1AhVTT2wGHW48CqwQmxMoBXoECCoQBw"
+             target="_blank" class="h-2">C++</a>,<a href="" 
+             class="h-2" target="_blank"> C</a>,<a href="https://www.google.com/search?sxsrf=APq-WBsEsNVCcZdBITZ1U5IbbLdHeh2BBg:1644081892758&q=Ruby+programming+language&stick=H4sIAAAAAAAAAOPgE-LSz9U3MK2KLzLKU-IAsc3S0ky1dDLKrfST83NyUpNLMvPz9Ivz00rKE4tSrQqK8tOLEnNzM_PSFXIS89JLE9NTF7FKBpUmVSpgk9vByggAUFc_DmUAAAA&sa=X&ved=2ahUKEwj18Mupiun1AhVTT2wGHW48CqwQmxMoB3oECCoQCQ"
+              class="h-2" target="_blank"> Ruby</a>, <a href="https://www.google.com/search?sxsrf=APq-WBsEsNVCcZdBITZ1U5IbbLdHeh2BBg:1644081892758&q=Perl&stick=H4sIAAAAAAAAAOPgE-LSz9U3MK2KLzLKU-KAsIvytHQyyq30k_NzclKTSzLz8_SL89NKyhOLUq0KivLTixJzczPz0hVyEvPSSxPTUxexsgSkFuXsYGUEAARNIItQAAAA&sa=X&ved=2ahUKEwj18Mupiun1AhVTT2wGHW48CqwQmxMoCHoECCoQCg"
+               class="h-2" target="_blank">Perl </a>.
+               <br>
+               <img src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1644403814/hevo-learn/springboot_MongoDB_configuration_mongodb/springboot_MongoDB_configuration_mongodb.jpg?_i=AA" 
+               alt="" srcset="" class="img2">
+               </p>
+               <br>
+               <p>
+            <a href="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1644403814/hevo-learn/springboot_MongoDB_configuration_mongodb/springboot_MongoDB_configuration_mongodb.jpg?_i=AA"
+             class="h-2 text" style="text-align: center;padding-bottom: 2rem; margin-bottom: 1rem;">Image Source</a></p>
+             <br>
+             <hr style="color:white ;">
+           <p>  MongoDB is a NoSQL Server in which data is stored in <a href="https://en.wikipedia.org/wiki/BSON#:~:text=BSON%20(%2F%CB%88bi%CB%90s,a%20computer%20data%20interchange%20format.&text=It%20is%20a%20binary%20form,originated%20in%202009%20at%20MongoDB." 
+             target="_blank" class="h-2"> BSON</a> (Binary JSON) documents and each document is essentially built on a key-value pair structure. 
+              As MongoDB easily stores schemaless data, make it appropriate for capturing data 
+              whose structure is not known. This document-oriented approach is designed to offer a 
+              richer experience with modern programming techniques.
+            </p>
+            <p>
+                To install MongoDB click<a href="https://www.mongodb.com/docs/manual/administration/install-community/" class="h-2" target="_blank"> here</a>
+            </p>
+           
+        </div>
+        
+    </div>
+    
+            <div   class="bl">
+            <h2 id="Md2" class="top-space">Features of MongoDB</h2>
+            <img src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1644486462/hevo-learn/mongodb-architecure/mongodb-architecure.png?_i=AA" alt="" srcset="" class="img3">
+           <br>
+           <hr style="color:white ;">
+           <p> <a href="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1644486462/hevo-learn/mongodb-architecure/mongodb-architecure.png?_i=AA"
+            class="h-2 text" style="text-align: center;padding-bottom: 2rem;margin-bottom: 1rem;">Image Source</a>
+        </p>
+         <p>Main features of MongoDB which make it unique are :</p>
+         </div>
+         
+            <div>
+         <h2 id="Md3" class="bl top-space">High Performance</h2>
+         <p>
+            Data operations on MongoDB are fast and easy because of their NoSQL nature.
+             Data can be quickly stored, manipulated, and retrieved without any compromise on data integrity.
+         </p>
+        </div>
+         <div>
+         <h2 id="Md4" class="bl top-space">Scalability</h2>
+         <p>
+            In the Big Data era, MongoDB data can be distributed across a cluster of machines quickly and equally, free of bulkiness.
+             The scalability of MongoDB handles a growing amount of data capably.
+             <a href="https://www.mongodb.com/docs/manual/sharding/" class="h-2" target="_blank">
+             Sharding </a> is a process in MongoDB used to horizontally scale the data across multiple servers when the size of data increases.
+         </p>
+        </div>
+
+        
+            <div class="bl">
+         <h2 id="Md5" class="top-space">Availability</h2>
+         <p class="bl">Data is highly available with MongoDB as it makes multiple copies 
+            of the same data and sends copies of data across different servers. In case any server fails,
+             data can be retrieved from another server without delay</p>
+             <h2 id="Md6" class="top-space">Flexibility</h2>
+             <p>MongoDB can easily be combined with different Database Management Systems, both SQL and NoSQL types.
+                 Document-oriented structure makes MongoDB 
+                schema dynamically flexible and different types of data can be easily stored and manipulated</p>
+           </div>
+
+
+       
+       
+   
+        <div class="bl">
+            <h2 id="SQL1" class="bl top-space">What is SQL Server?</h2>
+            <img src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1644478410/hevo-learn/sql-server_logo/sql-server_logo.jpg?_i=AA" alt="" class="img4">
+            <p > <a href="https://www.sqlservertutorial.net/"
+                class="h-2 text" style="text-align: center;padding-bottom: 2rem;margin-bottom: 1rem;">Image Source</a>
+            </p>
+
+            <p>
+                <a href="https://www.microsoft.com/en-in/sql-server/sql-server-2019" 
+                target="_blank" class="h-2"> SQL Server</a> is a Relational Database Management System(RDBMS). 
+                It is also known as Microsoft SQL Server or sometimes as MSSQL. 
+                SQL Server is developed by Microsoft and was initially releases on April 24, 1989. 
+                Its stable release is <a href="https://www.microsoft.com/en-in/sql-server/sql-server-2019" target="_blank" class="h-2"> SQL Server 2019</a> released on 4 November 2019.
+                MSSQL is written in programming languages like C and C++.
+            </p>
+            <p>
+                SQL Server is based on the relational model introduced by <a href="https://en.wikipedia.org/wiki/Edgar_F._Codd" target="_blank" class="h-2"> E. F. Codd</a>. 
+                In RDBMS data is stored in tables and the relationships among the data are maintained between tables.
+                 In tables, data is organized in rows and columns format.
+                  Each column represents a particular field or feature and each row in the table represents an entry 
+                  or a record.
+            </p>
+            <p>Microsoft SQL Server offers a variety of  <a href="https://docs.microsoft.com/en-us/sql/sql-server/editions-and-components-of-sql-server-2017?view=sql-server-2017#includessnoversionincludesssnoversion-mdmd-editions" target="_blank" class="h-2"> 
+                editions with  different functionally</a> :
+                 Express, Enterprise, Standard, Web, Developer. Express edition is freeware for small and 
+                 entry-level applications while others are licensed-based editions used for bigger projects on 
+                 commercial levels based on the service required. SQL Server supports XML data type format and 
+                 dynamic management views.</p>
+                 <p>To install SQL Server click <a href="https://www.microsoft.com/en-in/sql-server/sql-server-downloads" target="_blank" class="h-2"> here</a>.</p>
+                
+                 <h2 id="SQL2" class="bl top-space">Features of SQL Server</h2>
+                 <img src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1644486589/hevo-learn/SQL-Server-architecture/SQL-Server-architecture.png?_i=AA" alt="" class="img4">
+                 <hr style="color:white ;">
+                 <p> <a 
+                href="https://www.researchgate.net/figure/SQL-Server-Database-Architecture_fig1_285429493"
+                  class="h-2 text" style="text-align: center;padding-bottom: 2rem;margin-bottom: 1rem;">Image Source</a>
+              </p>
+              <p>Main features of SQL Server that make it highly usable are : </p>
+                </div>
+            <div>
+                <h2 id="SQL3" class="bl top-space">Cloud Database Support</h2>
+                <p>Microsoft SQL Server offers editions that can be integrated with Microsoft cloud or Azure SQL with built-in security and manageability.
+                     Cloud database support makes SQL Server highly available, fast failover with minimum uptime.</p>
+            </div>
+
+            <div>
+             <h2 id="SQL4" class="bl top-space">Ease of Management</h2>
+             <p>Microsoft SQL Servers can easily be used with Windows and Linux systems. 
+                SQL Server deployment and its management is easy with Kubernetes.</p>
+            </div>
+
+            <div>
+                <h2 id="SQL5" class="bl top-space">High Security</h2>
+                <p>Data in SQL Server is encrypted and highly secured. Schemas and Tables can be password protected easily and can be accessed with permissions only.</p>
+            </div>
+
+            <div>
+                <h2 id="SQL6" class="bl top-space">End-to-End Business Data Solutions</h2>
+                <p>SQL Server mainly focuses on commercial needs so it provides end-to-end business data solutions. 
+                    Microsoft SQL Server offers tools for Data Administration,  ETL solutions, 
+                    Online Analytical Processing(OLAP), and Data Mining purposes. It additionally provides
+                     Option Reporting, Interactive Analysis, 
+                    and Visual Data Exploration using SQL Server BI tools.</p>
+            </div>
+            
+</section>
+<section class="s4" >
+    <div style="border: solid 1px #e7ecf0!important; border-radius: 0.5rem !important;">
+        <h4 style="color: #1282d4; padding: 1rem"><i class="fa-solid fa-book-bookmark"></i>Simplify ETL Using Hevo’s No-code Data Pipeline</h4>
+       <div>
+        <p >
+            Hevo Data is a No-code Data Pipeline that offers a fully managed solution to set up
+             Data Integration for 100+ Data Sources <strong> (Including 40+ Free sources)</strong> and will let you directly 
+             load data from many sources to the Destinations of your choice like <strong> MongoDB</strong> and <strong> SQL Server</strong>.
+        </p>
+        <p>
+            Hevo will automate your data flow in minutes without writing any line of code. Its fault-tolerant architecture 
+            makes sure that your data is secure and consistent. Hevo provides you with a truly efficient
+             and fully automated solution to manage data in real-time and always have analysis-ready data.
+        </p>
+        <p>
+            <a  href="https://hevodata.com/signup/?step=email&utm_campaign=Signup&utm_medium=appbar_get_started_button&utm_source=Learn_mongodb-vs-sql-server"target="_blank">
+                <button type="button" class="btn " style="color:white ; background-color: rgb(255, 140, 0);"><strong> GET STARTED FOR FREE </strong></button>
+            </a><p>Look at some of the salient features of Hevo:</p> 
+       <ul>
+        <li><strong>Fully Managed</strong>: It requires no management and maintenance as Hevo is a fully automated platform.</li>
+        <li><strong>Data Transformation</strong>: It provides a simple interface to perfect, modify, and enrich the data you want to transfer.</li>
+        <li><strong>Real-Time</strong>: Hevo offers real-time data migration. So, your data is always ready for analysis.</li>   
+        <li><strong>Schema Management</strong>: Hevo can automatically detect the schema of the incoming data and map it to the destination schema.</li>
+        <li><strong>Connectors</strong>:  Hevo supports <strong> 100+ Integrations </strong> to SaaS platforms such as WordPress,
+             FTP/SFTP, Files, Databases, BI tools, and Native REST API & Webhooks Connectors. It supports various destinations including Google BigQuery, Amazon Redshift, Snowflake, Firebolt, Data Warehouses;
+             Amazon S3 Data Lakes; Databricks,  MySQL,<strong> SQL Server</strong>, TokuDB, DynamoDB,<strong> MongoDB</strong>, PostgreSQL Databases to name a few</li>
+        <li><strong>Secure</strong>: Hevo has a fault-tolerant architecture that ensures that the data is handled in a secure, consistent manner with zero data loss.</li>
+       <li><strong>Hevo Is Built To Scale</strong>: As the number of sources and the volume of your data grows, Hevo scales horizontally, handling millions of records per minute with very little latency.</li>       
+       <li><strong>Live Monitoring</strong>:Advanced monitoring gives you a one-stop view to watch all the activities that occur within Data Pipelines. </li>
+       <li><strong>Live Support</strong>: Hevo team is available round the clock to extend exceptional support to its customers through chat, email, and support calls.
+        Mongo</li>
+   
+    </ul> 
+    <p>
+        <a target="_blank" href="https://hevodata.com/signup/?utm_source=Learn_mongodb-vs-sql-server&utm_medium=mango_l2_signup&utm_campaign=blog_click"target="_blank">
+        <button type="button" class="btn " style="color:white ; background-color: rgb(255, 140, 0);"><strong> SIGN UP HERE FOR 14-DAYS FREE TRIAL! </strong></button></p>
+    </a>
+    </div> 
+    </div>
+</section>
+
+<section class="s5">
+      <h2 class="bl top-space" id="MvS1">MongoDB vs SQL Server: Key Differences</h2>
+      <div><p>The key differences between MongoDB and SQL Server:</p></div>
+      <div class="gridtable">
+        <!-- 1 -->
+       <div class="r1 sub" ><strong>Base of Comparison</strong></div>
+       <div class="r1 sub"><strong>MongoDB</strong></div>
+       <div class="r1 sub"><strong>SQL Server</strong></div>
+      <!-- 2 -->
+      <div><p>Developed by and Initial Release</p></div>
+      <div><p>Developed by MongoDB Inc. and initially released on February 11,  2009.</p></div>
+      <div><p>Developed by Microsoft Corporation and released initially on April 24, 1989.</p></div>
+      <!-- 3 -->
+            <div><p>Database Model</p></div>
+            <div><p>Non-Relational Database: Document-oriented (key-value structure)</p></div>
+            <div><p>Relational Database: Tables format</p></div>
+            <!-- 4 -->
+            <div><p>Implementation Language</p></div>
+            <div><p>JavaScript, Python, Java, PHP, C++, C, Ruby, Perl</p></div>
+            <div><p>C, C++</p></div>
+            <!-- 5 -->
+            <div><p>License</p></div>
+            <div><p>Open-Source</p></div>
+            <div><p>License required</p></div>
+            <!-- 6 -->
+            <div><p>Data Schema</p></div>
+            <div><p>Dynamic Schema</p></div>
+            <div><p>Fixed Schema</p></div>
+            <!-- 7 -->
+            <div><p>Query Language</p></div>
+            <div>MongoDB Query Language </p></div>
+            <div><p> SQL Query Language</p></div>
+            <!-- 8 -->
+            <div><p>Scalability</p></div>
+            <div>Horizontal</p></div>
+            <div>Vertical</p></div>
+            <!-- 9 -->
+            
+            <div>Map Reduce</div>
+            <div>Supports Map Reduce method.</p></div>
+            <div>Does not support the Map-Reduce method.</div>
+            <!-- 10 -->
+            <div>Joins</div>
+            <div>No</p></div>
+            <div>Yes</p></div>
+            <!-- 11 -->
+            <div><p>Transaction</p></div>
+            <div>MongoDB provides Multi-document ACID transactions with snapshot isolation.</p></div>
+            <div>MS SQL Server provides ACID transactions without snapshot isolation.</p></div>
+            <!-- 12 -->
+            <div><p>XML support</p></div>
+            <div>No</p></div>
+            <div>Yes</p></div>
+       
+
+    </div>
+      <div>
+        <p>The following section talks about the primary differences between MongoDB vs SQL Server in detail:</p>
+      </div>
+      <div>
+        <h5 id="D1" class="bl top-space">Developed by and Initial Release</h5>
+      </div>
+      <div>
+        <p>MongoDB is developed by MongoDB Inc. and was initially released on February 11, 2009.</p>
+        <p>SQL Server is developed by Microsoft Corporation and was initially released on April 24, 1989.</p>
+      </div>
+      <div>
+        <h5 id="D2" class="bl top-space">Database Model</h5>
+      </div>
+      <div>
+        <p>MongoDB is a Non-Relational Database based on a document-oriented structure that internally is based on a key-value structure.</p>
+        <p>SQL Server is a Relational Database based on relatable structured tables with various rows and columns.</p>  
+    </div>
+    <div>
+        <h5 id="D3" class="bl top-space">Implementation Language</h5>
+    </div>
+    <div>
+        <p>MongoDB is implemented in JavaScript, Python, Java, PHP, C++, C, Ruby, Perl, C, C++ whereas SQL Server is implemented in C and C++.</p>
+    </div>
+    <div>
+        <h5 id="D4" class="bl top-space">License</h5>
+    </div>
+    <div><p>MongoDB is an Open-Source DBMS whereas a SQL Server license is required for commercial purposes.</p></div>
+    <div>
+        <h5 id="D5" class="bl top-space">Data Schema</h5>
+        
+    </div>
+    <div>
+        <p>MongoDB has a flexible dynamic schema that can easily be changed with the evolution of data, application, or business.</p>
+        <p>SQL Server has a fixed Schema that is predefined before inserting any data. Fixed schema means schema can’t be changed as data, application, or business requirement evolves.</p>
+    </div>
+    <div><h5 id="D6" class="bl top-space">Query Language</h5></div>
+    <div><p>MongoDB uses MongoDB Query Language to query unstructured data from the database</p>
+    <p>SQL Server uses SQL Query Language to Create Tables, Insert, Fetch or Update data in the database.</p>
+    </div>
+    <div>
+        <h5  id="D7"class="bl top-space">Scalability</h5>
+    </div>
+    <div>
+        <p>MongoDB supports Horizontal Scaling in which data is distributed across clusters.
+             The Sharding process is used to implement horizontal scaling which results in an always-up server.</p>
+             <p>SQL Server supports vertical scaling which is the traditional approach. In vertical scaling,
+                 physical or virtual resources are added to the hosting server of the database. </p>
+    </div>
+    <div>
+        <h5 id="D8" class="bl top-space">Map Reduce</h5>
+    </div>
+    <div>
+        <p>MongoDB supports a data processing algorithm for concentrating large volumes of data into aggregated results. 
+            MongoDB provides the MapReduce database command to perform map-reduce operations.</p>
+            <p>SQL Server does not support the Map-Reduce method.</p>
+    </div>
+    <div>
+        <h5 id="D9"class="bl top-space">Joins</h5>
+        <p>MongoDB is a non-relational database so it does not support JOINs whereas SQL Server used JOINS to retrieve data from multiple tables which are joined.</p>
+    </div>
+    <div>
+        <h5 id="D.10" class="bl top-space">Transaction</h5>
+    </div>
+    <div><p>MongoDB provides multi-document <a href="https://www.mongodb.com/basics/acid-transactions" class="h-2" target="_blank"> ACID transactions</a> (ACID is an acronym for Atomicity, Consistency, Isolation, Durability) with snapshot isolation, 
+        which ensures that the database is in a valid state after a set of database operations is executed</p></div>
+        <div>
+            <h5 id="D.11"class="bl top-space">XML support</h5>
+        </div>
+        <div><p>MongoDB doesn’t support XML structured documents. Documents in MongoDB are stored in BSON format.</p>
+        <p>SQL Server provides support for XML structured data. XML support is integrated into all the components of SQL Server.</p></div>
+       <div><h5 id="D.12"class="bl top-space">Conclusion</h5></div>
+       <div>
+        <p>MongoDB is a database that is more advanced and capable of handling big data with dynamic schema features. 
+            SQL Server is an RDBMS that is used to manage the relational database system and offers end-to-end
+             business data solutions. In the case of unstructured data MongoDB is a good choice.
+             Also, MongoDB is open source which makes it readily available.</p>
+             <p>No doubt SQL Server is going strong for many years but now with the era of Big Data,
+                 MongoDB seems to have a bright future. But, that doesn’t mean SQL Server will be completely eradicated. 
+                The choice of database between MongoDB and SQL Server is completely specific to the user’s needs.</p>
+                <p>
+                    <a href="https://hevodata.com/?utm_source=Learn_mongodb-vs-sql-server&utm_medium=mango_Conclusion_Visit_our_Website_to_Explore_Hevo&utm_campaign=blog_click" target="_blank">
+                    <button type="button" class="btn " style="color:white ; background-color: rgb(255, 140, 0);"><strong> VIST OUR WEBSITE TO EXPLORE HEVO </strong></button></p></a>
+                 <p>
+                   <a href="https://hevodata.com/?utm_source=Learn_mongodb-vs-sql-server&utm_medium=l3_home&utm_campaign=blog_click" target="_blank" class="h-2"> Hevo Data</a>, a No-code Data Pipeline provides you with a consistent and reliable solution
+                     to manage data transfer
+                     between a variety of sources to destinations like <strong> MongoDB</strong> and <strong> SQL Server</strong>, with a few clicks.
+                 </p>
+                 <p>
+                    Hevo Data with its strong integration with <a href="evodata.com/?utm_source=Learn_mongodb-vs-sql-server&utm_medium=l4_home&utm_campaign=blog_click" target="_blank" class="h-2"> 100+ sources</a> <strong>(including 40+ free sources)</strong> allows you to 
+                    not only export data from your desired data sources & load it to the destination of your choice,
+                     but also transform & enrich your data to make it 
+                    analysis-ready so that you can focus on your key business needs and perform insightful analysis using BI tools.
+                 </p>
+            </div>
+            <div>
+                <iframe class="ifa"  src="https://www.youtube.com/embed/p0XGLDgvCo8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div>
+                <p>
+                    Want to take Hevo for a spin?  for a <a href="https://hevodata.com/signup/?utm_source=Learn_mongodb-vs-sql-server&utm_medium=mango_Conclusion_Sign_Up&utm_campaign=blog_click" target="_blank">
+                        <button type="button" class="btn " style="color:white ; background-color: rgb(255, 140, 0);"><strong> SIGN UP </strong></button></a>
+                 
+                    <strong> 14-day free trial</strong> and experience the feature-rich Hevo suite first hand. You can 
+                    also have a look at the unbeatable pricing that will help you choose the right plan for your business needs.
+                </p>
+            </div>
+            <div>
+                <hr class="gre">
+                <div class="bts">
+                <p>
+                <a class=" btn1" href="https://hevodata.com/learn/tag/mongodb/" target="_blank" role="button">MongoDB</a>
+                <a class=" btn1" href="https://hevodata.com/learn/tag/mssql/" target="_blank" role="button">MYSQL</a>
+            </div>
+            </p>
+                <hr class="gre">
+            </div>
+
+</section>
+
+
+<section id="mid">
+    <h2 class="bl">Continue Reading</h2>
+    <div>
+         <div class="album py-5 bg-light">
+           <div class="container">
+       
+             <div class="row row-cols-1 row-cols-md-3 g-4">
+              
+               <div class="col">
+                 <div class="card shadow-sm">
+                   <img class="card-img-top" src="https://res.cloudinary.com/hevo/image/upload/v1623646644/illustrations/contribute_wrwej2_1_1_u5h2jw.png" alt="">
+       
+                   <div class="card-body">
+                     <p class="card-text">
+                       <h4 class="bl">Become a Contributor</h4>
+                       
+                       <p>You can contribute any number of in-depth posts on all things data.</p>
+                       <br>
+                       <p><a href="https://community.hevodata.com/write-for-hevo" 
+                           target="_blank" class="h-1"> WRITE FOR HEVO</a></p>
+                   </p>
+                   </div>
+                 </div>
+               </div>
+               <div class="col" >
+                 <div class="card shadow-sm">
+                  <img class="card-img-top" src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1655798014/hevo-learn/PostgreSQL-Convert-Datetime-To-Date/PostgreSQL-Convert-Datetime-To-Date.png?_i=AA" alt="">
+       
+                   <div class="card-body">
+                     <p class="card-text">
+                       <p class="gre"><a href="https://hevodata.com/learn/postgresql-convert-datetime-to-date/"target="_blank" class="h-3"> Divyansh Sharma</a> on <a href=""target="_blank" class="h-3"> Data Cleaning</a>,<a href=""target="_blank" class="h-3"> Database Management Systems</a>,<a href=""target="_blank" class="h-3"> PostgreSQL</a>,<a href=""target="_blank" class="h-3"> Relational Database</a>, <a href=""target="_blank" class="h-3">Tutorials</a></p>
+                   <a href="" target="_blank" class=" bl h-3" ><h5>PostgreSQL Convert DateTime to Date: 10 Practical Examples Simplified</h5></a>
+                   </p>
+                   </div>
+                 </div>
+               </div>
+       
+               <div class="col">
+                 <div class="card shadow-sm">
+                   <img src="https://res.cloudinary.com/hevo/images/f_auto,q_auto/v1655371040/hevo-learn/MongoDB-Atlas-to-Redshift-FI/MongoDB-Atlas-to-Redshift-FI.png?_i=AA" alt="">
+       
+                   <div class="card-body">
+                     <p class="card-text">
+                       <p class="gre"><a href="https://hevodata.com/learn/author/aditya-jadon/" target="_blank"class="h-3" > Aditya Jadon</a> on <a href="https://hevodata.com/learn/category/data-warehouses/amazon-redshift/" target="_blank"class="h-3" > Amazon Redshift</a>,<a href="https://hevodata.com/learn/category/data-integration/" target="_blank"class="h-3" > Data Integration</a>, <a href="https://hevodata.com/learn/category/data-warehouses/" target="_blank"class="h-3" >Data Warehouses</a>, 
+                           <a href="https://hevodata.com/learn/category/data-integration/database-management-systems/" target="_blank"class="h-3" >Database Management Systems</a>,<a href="https://hevodata.com/learn/category/data-integration/database-management-systems/mongodb/" target="_blank"class="h-3" > MongoDB</a></p>
+                  <br> <a href="https://hevodata.com/learn/mongodb-atlas-to-redshift/" target="_blank" class=" bl h-3"><h5>Connecting  MongoDB Atlas  to Redshift : 2 Easy  Methods</h5></a>
+                   </p>
+                   </div>
+                 </div>
+               </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <hr class="gre">
+
+<section class="s6">
+   <div class="container">
+       <div class="row">
+         <div class="col">
+           <a   href="#" class="gre1" target="_blank"><strong class="gre1">0 Comments</strong></a>
+         </div>
+         <div class="col">
+           <a  href="https://disqus.com/home/forums/hevo-learn/?" class="gre1" target="_blank"><strong>
+               Hevo Learn</strong></a>
+         </div>
+         <div class="col">
+           <a  href="https://help.disqus.com/en/articles/1717103-disqus-privacy-policy" target="_blank" class="gre1"><i class="fa-solid fa-lock bl"></i> <strong >Disqus' Privacy Policy</strong></a>
+   
+         </div>
+         <div class="col">
+           <div class="dropdown gre1">
+               <button class="btn btn-secondary dropdown-toggle gre1"  style="background-color:white;color: gray; border: none;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="fa-solid fa-comment"></i> <strong> Login</strong>
+               </button>
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                 <li><a class="dropdown-item" href="#">Disqus</a></li>
+                 <li><a class="dropdown-item" href="#">Facebook</a></li>
+                 <li><a class="dropdown-item" href="#">Twitter</a></li>
+                 <li><a class="dropdown-item" href="#">Google</a></li>
+               </ul>
+             </div>
+         </div>
+       </div>
+     </div>
+     <hr class="gre">
+     <div class="container">
+       <div class="row">
+         <div class="col">
+           <a   href="#" class="gre1" target="_blank"><i class="fa-regular fa-heart"></i><strong class="gre1">Favorite</strong></a>
+           <button class="btn btn-primary" style="font-size: xx-small;"  ; type="link"><strong><a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fdisq.us%2Ft%2F452tucj&text=MongoDB%20vs%20SQL%20Server%3A%20Which%20is%20Better%3F%20%5B10%20Critical%20Differences%5D" target="_blank"style="color: white;" ><i class="fa-brands fa-twitter-square"> tweet</i></strong></a>
+           </strong></a></button>
+           <button class="btn btn-primary" style="font-size: xx-small;"  ; type="link"><strong><a href="" target="_blank"style="color: white;" ><i class="fa-brands fa-facebook"> Share</i></strong></a>
+           </strong></a></button>
+         </div>
+         <div class="col text">
+           <div class="dropdown gre1">
+               <button class="btn btn-secondary dropdown-toggle gre1"  style="background-color:white;color: gray; border: none;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                   <i class="fa-solid fa-comment"></i> Best by sort
+               </button>
+               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                 <li><a class="dropdown-item" href="#">Best</a></li>
+                 <li><a class="dropdown-item" href="#">Newest</a></li>
+                 <li><a class="dropdown-item" href="#">Oldest</a></li>
+               </ul>
+             </div>
+   
+         </div></div></div>
+     <nav class="navbar bg-light">
+       <form class="container-fluid">
+         <div class="input-group mb-3 w-75">
+           
+           <i class="fa-solid fa-user" style="font-size: 50px;padding:1rem"></i> <input type="text" class="form-control" placeholder="
+           Start the discussion…" aria-label="Username" aria-describedby="basic-addon1">
+           
+         </div>
+       </form>
+     </nav>
+     <p>  <small class="gre pad">LOG IN WITH</small>
+       <p><a href="" title="disqus icons"target="_blank"><img src="disqus.png" alt="" class="pad" style="width: 100px;"></a>
+       <a href="" target="_blank"><i class="fa-brands fa-facebook" ></i></a>
+       <a href="" target="_blank"><i class="fa-brands fa-twitter-square"></i></a>
+       <a href=""target="_blank"><i class="fa-brands fa-google" style="background-color: blue;color:white"></i></a>
+  </p> <span>
+       <small class="gre text">OR SIGN UP WITH DISQUS
+       </small><i class="fa-solid fa-circle-question"></i>
+     <nav class="navbar bg-light">
+       <form class="container-fluid">
+         <div class="input-group mb-2 w-75">
+         
+          <p> <input type="text" class="form-control text" placeholder="
+           Name" aria-label="Username" aria-describedby="basic-addon1"></p>
+           
+         </div>
+       </form>
+     </nav></p>
+     
+          <center>
+           <p class="gre">Be the first to comment.</p>
+          </center>
+       </p>
+
+       <hr class="gre">
+       <div class="container">
+           <div class="row">
+             <div class="col">
+             <small>  <a class="gre1" target="_blank" href="https://disqus.com/profile/login/?forum=hevo-learn&next=https%3A%2F%2Fdisqus.com%2Fnext%2Flogin%2F&evs=bmV0d29ya19kZWZhdWx0X2hpZGRlbjpmYWxsdGhyb3VnaDpkeW5hbWlj">
+                   <i class="fa-regular fa-envelope"></i>
+                   <strong>Subscribe</strong></a></small>
+
+                  <small> <a href="https://disqus.com/features/engage/" class="gre1" title="disqus icons"target="_blank"><img src="disqus.png" alt="" class="pad" style="width: 100px;"><strong>Add Disqus to your site</strong>
+               </a></small>
+
+               <small class="text">
+                   <a href="https://disqus.com/data-sharing-settings/" target="_blank" class="gre1">
+                       <i class="fa-solid fa-triangle-exclamation"></i>
+                       <strong>Do Not Sell My Data</strong>
+                   </a>
+               </small>
+
+               <small class="text">
+                   <a href="https://disqus.com/" class="gre1" target="_blank">
+                       <strong class="gre1">DISQUS</strong>
+                   </a>
+               </small>
+           </div>
+           
+       </div>
+       </div>
+     
+</section class="dark" style="margin-bottom: 0rem">
+
+<section class="get-started-link-section dark">
+   <div class="container text-center text-lg-left">
+       <div class="row justify-content-center align-items-end">
+           <div class="col-lg-6 mb-5 mb-lg-0">
+            <h2 >
+               Bring Real-Time Data from Any Source into your Warehouse
+            </h2>
+           </div>
+           <div class="col-lg-6 col-sm-10">
+               <div class="input-group w-100">
+                   <input type="text" class="form-control text" placeholder=" Your Work email" aria-label=" Your Work email" aria-describedby="basic-addon1" style="margin-right: 1rem;">
+                    <small><button type="button" class="btn " style="color:white ; background-color: rgb(255, 140, 0);"><strong> GET STARTED FOR FREE </strong></button></small>  
+                 </div>
+           </div>
+       </div>
+   </div>
+
+           
+         
+         
+   
+
+</section>
+
+
+<section style="background-color: rgb(244, 244, 244); padding-top: 1rem;padding-bottom: 1rem;">
+   <div class="fl">
+   <div id="grid2">
+       <div>
+           <a class="navbar-brand " id="heading" href="#">
+               <img src="https://avatars.githubusercontent.com/u/23663616?s=200&v=4" class="size" alt="" srcset="">
+               HEVO</a>
+               <br>
+               <div class="item-set2 fl fl2">
+               <a href="https://twitter.com/HevoData"class="gre2">  <i class="fa-brands fa-twitter-square fa-1x" ></i></a>
+             <a href="https://www.linkedin.com/company/hevodata/" target="_blank" class="gre2"> <i class="fa-brands fa-linkedin fa-1x" ></i></a> 
+           </div>
+           <p class="fspace"><sup>&copy;</sup> Hevo Data Inc. 2022. All Rights Reserved.</p>
+           <p > Webpage recreated by Reeva Singh <sup>&copy;</sup> 2022  <br>
+           </div>
+       <div class="item-set2 ">
+           <h6 ><strong>PLATFORM</strong> </h6>
+           <p>
+           <p><a href="https://hevodata.com/pipeline/" target="_blank">Product</a></p>
+           <p><a href="https://hevodata.com/integrations/pipeline/?utm_campaign=blog_click&utm_medium=footer_integrations&utm_source=Learn_mongodb-vs-sql-server" target="_blank">Integrations</a>
+           <button type="link" class="btnf"><strong> NEW</strong></button></p>
+           <p> <a href="https://hevodata.com/pricing/pipeline/?utm_campaign=blog_click&utm_medium=footer_pricing&utm_source=Learn_mongodb-vs-sql-server" target="_blank">Pricing</a></p>
+           <p><a href="https://hevodata.com/signup/?step=emailutm_campaign=blog_click&utm_medium=footer_free_trial_link&utm_source=Learn_mongodb-vs-sql-server" target="_blank">Free Trial</a></p>
+           <p><a href="https://changelog.hevodata.com/" target="_blank">Changelog</a></p>
+           <p><a href="https://docs.hevodata.com/upcoming-features/" target="_blank">Upcoming Features</a></p>
+           <p><a href="https://status.hevodata.com/" target="_blank">Status</a></p></p>
+           </div>
+       <div class="item-set2 ">
+           <h6><strong>CONCEPTS</strong></h6>
+           
+               <p>
+              <p><a href="https://hevodata.com/blog/" target="_blank">ETL</a></p> 
+              <p><a href="https://hevodata.com/blog/amazon-redshift-data-warehouse/" target="_blank">Amazon Redshift</a></p> 
+              <p><a href="https://hevodata.com/blog/google-bigquery-data-warehouse/" target="_blank">Google BigQuery</a></p> 
+              <p><a href="https://hevodata.com/blog/snowflake-data-warehouse/" target="_blank">Snowflake</a></p>
+              </p>
+           
+       </div>
+       <div class="item-set2">
+           <h6><strong>COMPARISON GUIDES</strong></h6>
+           <p>
+              <p> <a href="https://hevodata.com/blog/best-etl-tools-data-warehouse/" target="_blank">ETL Tools</a></p> 
+              <p> <a href="https://hevodata.com/blog/data-pipeline-tools-list/" target="_blank">Data Pipeline Tools</a></p>
+              <p><a href="https://hevodata.com/blog/data-integration-tools/" target="_blank">Data Integration Tools</a></p> 
+              <p><a href="https://hevodata.com/blog/redshift-vs-bigquery/" target="_blank">Redshift vs BigQuery</a></p> 
+              <p><a href="https://hevodata.com/learn/google-bigquery-vs-snowflake-comparison/" target="_blank">BigQuery vs Snowflake</a></p> 
+              <p><a href="https://hevodata.com/blog/snowflake-vs-redshift/" target="_blank">Snowflake vs Redshift</a></p> 
+           </p>
+       </div>
+       <div class="item-set2">
+           <h6><strong>TUTORIALS</strong></h6>
+           <p>
+              <p> <a href="https://hevodata.com/blog/amazon-redshift-etl/" target="_blank">Redshift ETL</a></p> 
+              <p> <a href="https://hevodata.com/blog/bigquery-etl/" target="_blank">BigQuery ETL</a></p>
+              <p><a href="https://hevodata.com/learn/snowflake-etl-tools/" target="_blank">Snowflake ETL</a></p> 
+              <p><a href="https://hevodata.com/learn/change-data-capture/" target="_blank">Change Data Capture</a></p> 
+
+           </p>
+       </div>
+       </div>
+       <div  >
+           <strong>
+               <p class="fm">
+                   <button type="link" class="btnf" ><strong></strong>WRITE FOR HEVO</strong></button>
+                   You can contribute any number of in-depth posts on all things data. <a href="" target="_blank" class="h-2"> Know More</a>
+               
+               </p>
+           </strong>
+       </div>
+       </div>
+       </section>
+
+</section>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="app.js"></script>
+</body>
+</html>
